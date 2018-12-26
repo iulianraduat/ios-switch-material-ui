@@ -1,0 +1,77 @@
+{
+	"name": "ios-switch-material-ui",
+	"version": "1.0.0",
+	"description": "A material-ui component which implements a iOS like switch",
+	"main": "lib/index.js",
+	"sideEffects": false,
+	"scripts": {
+		"build": "rimraf ./lib && tsc",
+		"deploy": "cross-env NODE_ENV=production npm run build && npm publish",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iulian-radu-at/labeled-checkbox-material-ui.git"
+	},
+	"files": [
+		"lib",
+		"index.d.ts"
+	],
+	"keywords": [
+		"text",
+		"labeled-checkbox",
+		"password",
+		"material-ui",
+		"labeled-checkbox-material-ui",
+		"react",
+		"react-component",
+		"ui",
+		"material design"
+	],
+	"author": "Iulian Radu <iulian.radu@gmx.at>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/iulian-radu-at/labeled-checkbox-material-ui/issues"
+	},
+	"homepage": "https://github.com/iulian-radu-at/labeled-checkbox-material-ui#readme",
+	"dependencies": {
+		"@material-ui/core": "^3.6.0",
+		"lodash": "^4.17.11",
+		"react": "^16.6.3",
+		"react-dom": "^16.6.3"
+	},
+	"devDependencies": {
+		"@types/babel-core": "^6.25.5",
+		"@types/enzyme": "^3.1.15",
+		"@types/enzyme-adapter-react-16": "^1.0.3",
+		"@types/lodash": "^4.14.118",
+		"@types/react": "^16.7.7",
+		"@types/react-dom": "^16.0.10",
+		"@types/react-transition-group": "^2.0.14",
+		"@types/rimraf": "^2.0.2",
+		"babel-core": "^6.26.3",
+		"babel-jest": "^23.6.0",
+		"cross-env": "^5.2.0",
+		"enzyme": "^3.7.0",
+		"enzyme-adapter-react-16": "^1.7.0",
+		"rimraf": "^2.6.2",
+		"typescript": "^3.1.6"
+	},
+	"peerDependencies": {
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0"
+	},
+	"jest": {
+		"modulePathIgnorePatterns": [
+			"./node_modules",
+			"./history"
+		],
+		"transform": {
+			"^.+\\.js$": "babel-jest"
+		},
+		"testRegex": "src/*(/(__tests?__/)([^_].*/)*?[^_][^/]*?\\.(test|spec)?\\.(js?))$",
+		"setupFiles": [
+			"./enzymeAdapter.setup.js"
+		]
+	}
+}
