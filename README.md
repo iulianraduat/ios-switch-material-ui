@@ -75,3 +75,7 @@ export default App;
 ### 1.0.0
 
 - ios-switch-material-ui is made publicly available
+
+### 1.1.0
+
+- Updated packages
