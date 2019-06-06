@@ -11,7 +11,7 @@ The component accepts the props defined bellow in the table.
 ### Props accepted by IosSwitchMaterialUi
 
 | Name             | Type                          | Required | Default   | Description                                                     |
-| ---------------- | ----------------------------- | -------- | --------- | --------------------------------------------------------------- |
+|------------------|-------------------------------|----------|-----------|-----------------------------------------------------------------|
 | aspectRatio      | number                        | no       | 2         | The width/height raport                                         |
 | colorKnobOnLeft  | string                        | no       | #eeeeee   | The color of the knob when it is on the left                    |
 | colorKnobOnRight | string                        | no       | #5269d8   | The color of the knob when it is on the right                   |
@@ -26,10 +26,11 @@ The component accepts the props defined bellow in the table.
 ## Versions
 
 | IosSwitchMaterialUi _uses_ | Material-ui | React  |
-| -------------------------: | :---------: | :----: |
+|---------------------------:|:-----------:|:------:|
 |                      1.0.x |    3.6.0    | 16.6.3 |
 |                      1.1.x |    3.9.2    | 16.8.1 |
 |                      1.2.x |    3.9.3    | 16.8.6 |
+|                      2.0.x |    4.0.2    | 16.8.6 |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -82,5 +83,9 @@ export default App;
 - Updated packages
 
 ### 1.2.0
+
+- Updated packages
+
+### 2.0.0
 
 - Updated packages
