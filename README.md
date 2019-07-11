@@ -31,6 +31,7 @@ The component accepts the props defined bellow in the table.
 |                      1.1.x |    3.9.2    | 16.8.1 |
 |                      1.2.x |    3.9.3    | 16.8.6 |
 |                      2.0.x |    4.0.2    | 16.8.6 |
+|                      2.1.x |    4.2.0    | 16.8.6 |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -87,5 +88,9 @@ export default App;
 - Updated packages
 
 ### 2.0.0
+
+- Updated packages
+
+### 2.1.0
 
 - Updated packages
