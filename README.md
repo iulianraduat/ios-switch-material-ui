@@ -4,22 +4,27 @@ A material-ui component which implements a iOS like switch
 
 ---
 
+## Demo
+
+You can access the storybook for this component [here](https://iulian-radu-at.github.io/ios-switch-material-ui/).
+
 ## Props
 
 The component accepts the props defined bellow in the table.
 
 ### Props accepted by IosSwitchMaterialUi
 
-| Name             | Type                          | Required | Default   | Description                                                     |
-|------------------|-------------------------------|----------|-----------|-----------------------------------------------------------------|
-| aspectRatio      | number                        | no       | 2         | The width/height raport                                         |
-| colorKnobOnLeft  | string                        | no       | #eeeeee   | The color of the knob when it is on the left                    |
-| colorKnobOnRight | string                        | no       | #5269d8   | The color of the knob when it is on the right                   |
-| colorSwitch      | string                        | no       | #e2e2e2   | The color of the switch                                         |
-| disabled         | boolean                       | no       | false     | The component is disabled                                       |
-| knobOnLeft       | boolean                       | no       | false     | If true, the knob is on the left, othwise on the right          |
-| knobSize         | number                        | no       | 18        | The size of the knob                                            |
-| onChange         | (knobOnLeft: boolean) => void | no       | undefined | The callback function called when the knob changes its position |
+| Name              | Type                          | Required | Default   | Description                                                     |
+|-------------------|-------------------------------|----------|-----------|-----------------------------------------------------------------|
+| aspectRatio       | number                        | no       | 2         | The width/height raport                                         |
+| colorKnobOnLeft   | string                        | no       | #eeeeee   | The color of the knob when it is on the left                    |
+| colorKnobOnRight  | string                        | no       | #5269d8   | The color of the knob when it is on the right                   |
+| colorSwitch       | string                        | no       | #e2e2e2   | The color of the switch                                         |
+| defaultKnobOnLeft | boolean                       | no       | false     | The initial position of the knob                                |
+| disabled          | boolean                       | no       | false     | The component is disabled                                       |
+| knobOnLeft        | boolean                       | no       | false     | If true, the knob is on the left, othwise on the right          |
+| knobSize          | number                        | no       | 18        | The size of the knob                                            |
+| onChange          | (knobOnLeft: boolean) => void | no       | undefined | The callback function called when the knob changes its position |
 
 ---
 
@@ -32,6 +37,7 @@ The component accepts the props defined bellow in the table.
 |                      1.2.x |    3.9.3    | 16.8.6 |
 |                      2.0.x |    4.0.2    | 16.8.6 |
 |                      2.1.x |    4.2.0    | 16.8.6 |
+|                      3.0.x |    4.2.1    | 16.8.6 |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -93,4 +99,10 @@ export default App;
 
 ### 2.1.0
 
+- Updated packages
+
+### 3.0.0
+
+- Made the component to be controlled and uncontrolled
+- Added a stroybook
 - Updated packages

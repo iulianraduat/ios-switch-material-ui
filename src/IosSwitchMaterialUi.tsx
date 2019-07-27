@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { isNil, Dictionary, isEmpty, isFunction } from 'lodash';
+import {
+  Dictionary,
+  isEmpty,
+  isFunction,
+  isNil
+  } from 'lodash';
 
 const defaultColorSwitch: string = '#e2e2e2';
 const defaultColorKnobOnLeft: string = '#eeeeee';
@@ -10,125 +15,150 @@ const defaultKnobSize: number = 18;
 const paddingKnob: number = 2;
 
 const styles: Dictionary<React.CSSProperties> = {
-	knob: {
-		borderRadius: '50%',
-		position: 'relative',
-		transition:
-			'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, left 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
-	},
-	switch: {
-		display: 'inline-block',
-		transition:
-			'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
-	}
+  knob: {
+    borderRadius: '50%',
+    position: 'relative',
+    transition:
+      'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, left 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
+  },
+  switch: {
+    display: 'inline-block',
+    transition:
+      'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
+  }
 };
 
-class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps> {
-	public render() {
-		return (
-			<div onClick={this.handleChange} style={this.getStyleForSwitch()}>
-				<div style={this.getStyleForKnob()} />
-			</div>
-		);
-	}
+class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps, IosSwitchMaterialUiState> {
+  constructor(props: IosSwitchMaterialUiProps) {
+    super(props);
 
-	private getStyleForSwitch(): React.CSSProperties {
-		const { disabled } = this.props;
+    this.state = {
+      knobOnLeft: props.knobOnLeft || props.defaultKnobOnLeft || false
+    };
+  }
 
-		const backgroundColor: string = this.getSwitchColor();
-		const knobSize = this.getKnobSize();
-		const switchWidth = this.getSwitchWidth();
-		const switchHeight: number = this.getSwitchHeight();
+  public render() {
+    return (
+      <div onClick={this.handleChange} style={this.getStyleForSwitch()}>
+        <div style={this.getStyleForKnob()} />
+      </div>
+    );
+  }
 
-		const css: React.CSSProperties = {
-			...styles.switch,
-			backgroundColor,
-			borderRadius: knobSize,
-			cursor: disabled ? undefined : 'pointer',
-			height: switchHeight,
-			minHeight: switchHeight,
-			minWidth: switchWidth,
-			opacity: disabled ? 0.4 : 1,
-			top: paddingKnob,
-			width: switchWidth
-		};
+  private getStyleForSwitch(): React.CSSProperties {
+    const { disabled } = this.props;
 
-		return css;
-	}
-	private getSwitchColor() {
-		const { colorSwitch } = this.props;
+    const backgroundColor: string = this.getSwitchColor();
+    const knobSize = this.getKnobSize();
+    const switchWidth = this.getSwitchWidth();
+    const switchHeight: number = this.getSwitchHeight();
 
-		return isEmpty(colorSwitch) ? defaultColorSwitch : colorSwitch as string;
-	}
+    const css: React.CSSProperties = {
+      ...styles.switch,
+      backgroundColor,
+      borderRadius: knobSize,
+      cursor: disabled ? undefined : 'pointer',
+      height: switchHeight,
+      minHeight: switchHeight,
+      minWidth: switchWidth,
+      opacity: disabled ? 0.4 : 1,
+      top: paddingKnob,
+      width: switchWidth
+    };
 
-	private getSwitchWidth() {
-		return this.getAspectRatio() * this.getSwitchHeight();
-	}
+    return css;
+  }
 
-	private getAspectRatio() {
-		const { aspectRatio } = this.props;
+  private getSwitchColor() {
+    const { colorSwitch } = this.props;
 
-		return isNil(aspectRatio) ? defaultAspectRatio : aspectRatio;
-	}
+    return isEmpty(colorSwitch) ? defaultColorSwitch : (colorSwitch as string);
+  }
 
-	private getSwitchHeight() {
-		return this.getKnobSize() + 2 * paddingKnob;
-	}
+  private getSwitchWidth() {
+    return this.getAspectRatio() * this.getSwitchHeight();
+  }
 
-	private getKnobSize() {
-		const { knobSize } = this.props;
+  private getAspectRatio() {
+    const { aspectRatio } = this.props;
 
-		return isNil(knobSize) ? defaultKnobSize : knobSize;
-	}
+    return isNil(aspectRatio) ? defaultAspectRatio : aspectRatio;
+  }
 
-	private getStyleForKnob(): React.CSSProperties {
-		const { knobOnLeft } = this.props;
-		const backgroundColor: string = this.getKnobColor();
-		const knobSize = this.getKnobSize();
-		const switchWidth = this.getSwitchWidth();
+  private getSwitchHeight() {
+    return this.getKnobSize() + 2 * paddingKnob;
+  }
 
-		return {
-			...styles.knob,
-			backgroundColor,
-			height: knobSize,
-			left: knobOnLeft ? paddingKnob : switchWidth - knobSize - paddingKnob,
-			top: paddingKnob,
-			width: knobSize
-		};
-	}
+  private getKnobSize() {
+    const { knobSize } = this.props;
 
-	private getKnobColor() {
-		const { knobOnLeft, colorKnobOnLeft, colorKnobOnRight } = this.props;
+    return isNil(knobSize) ? defaultKnobSize : knobSize;
+  }
 
-		if (knobOnLeft && isEmpty(colorKnobOnLeft) === false) {
-			return colorKnobOnLeft as string;
-		}
+  private getStyleForKnob(): React.CSSProperties {
+    const { knobOnLeft } = this.state;
 
-		if (knobOnLeft !== true && isEmpty(colorKnobOnRight) === false) {
-			return colorKnobOnRight as string;
-		}
+    const backgroundColor: string = this.getKnobColor(knobOnLeft);
+    const knobSize = this.getKnobSize();
+    const switchWidth = this.getSwitchWidth();
 
-		return knobOnLeft ? defaultColorKnobOnLeft : defaultColorKnobOnRight;
-	}
+    return {
+      ...styles.knob,
+      backgroundColor,
+      height: knobSize,
+      left: knobOnLeft ? paddingKnob : switchWidth - knobSize - paddingKnob,
+      top: paddingKnob,
+      width: knobSize
+    };
+  }
 
-	private handleChange = () => {
-		const { disabled, onChange } = this.props;
+  private getKnobColor(knobOnLeft: boolean) {
+    const { colorKnobOnLeft, colorKnobOnRight } = this.props;
 
-		if (disabled !== true && isFunction(onChange)) {
-			onChange(!this.props.knobOnLeft);
-		}
-	};
+    if (knobOnLeft && isEmpty(colorKnobOnLeft) === false) {
+      return colorKnobOnLeft as string;
+    }
+
+    if (knobOnLeft !== true && isEmpty(colorKnobOnRight) === false) {
+      return colorKnobOnRight as string;
+    }
+
+    return knobOnLeft ? defaultColorKnobOnLeft : defaultColorKnobOnRight;
+  }
+
+  private handleChange = () => {
+    const { disabled, onChange } = this.props;
+
+    if (disabled) {
+      return;
+    }
+
+    const newKnobOnLeft: boolean = !this.state.knobOnLeft;
+
+    if (this.props.knobOnLeft === undefined) {
+      this.setState({
+        knobOnLeft: newKnobOnLeft
+      });
+    }
+
+    isFunction(onChange) && onChange(newKnobOnLeft);
+  };
+}
+
+interface IosSwitchMaterialUiState {
+  knobOnLeft: boolean;
 }
 
 interface IosSwitchMaterialUiProps {
-	aspectRatio?: number;
-	colorKnobOnLeft?: string;
-	colorKnobOnRight?: string;
-	colorSwitch?: string;
-	disabled?: boolean;
-	knobOnLeft?: boolean;
-	knobSize?: number;
-	onChange?: (knobOnLeft: boolean) => void;
+  aspectRatio?: number;
+  colorKnobOnLeft?: string;
+  colorKnobOnRight?: string;
+  colorSwitch?: string;
+  defaultKnobOnLeft?: boolean;
+  disabled?: boolean;
+  knobOnLeft?: boolean;
+  knobSize?: number;
+  onChange?: (knobOnLeft: boolean) => void;
 }
 
 export default IosSwitchMaterialUi;
