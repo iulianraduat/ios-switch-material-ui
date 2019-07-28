@@ -104,7 +104,7 @@ export default App;
 ### 3.0.0
 
 - Made the component to be controlled and uncontrolled
-- Added a stroybook
+- Added a storybook
 - Updated packages
 
 ### 3.0.1
