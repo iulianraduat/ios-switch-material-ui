@@ -1,10 +1,4 @@
 import * as React from 'react';
-import {
-  Dictionary,
-  isEmpty,
-  isFunction,
-  isNil
-  } from 'lodash';
 
 const defaultColorSwitch: string = '#e2e2e2';
 const defaultColorKnobOnLeft: string = '#eeeeee';
@@ -14,7 +8,7 @@ const defaultAspectRatio: number = 2;
 const defaultKnobSize: number = 18;
 const paddingKnob: number = 2;
 
-const styles: Dictionary<React.CSSProperties> = {
+const styles: { [key: string]: React.CSSProperties } = {
   knob: {
     borderRadius: '50%',
     position: 'relative',
@@ -82,7 +76,7 @@ class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps, IosS
   private getAspectRatio() {
     const { aspectRatio } = this.props;
 
-    return isNil(aspectRatio) ? defaultAspectRatio : aspectRatio;
+    return aspectRatio ? aspectRatio : defaultAspectRatio;
   }
 
   private getSwitchHeight() {
@@ -92,7 +86,7 @@ class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps, IosS
   private getKnobSize() {
     const { knobSize } = this.props;
 
-    return isNil(knobSize) ? defaultKnobSize : knobSize;
+    return knobSize ? knobSize : defaultKnobSize;
   }
 
   private getStyleForKnob(): React.CSSProperties {
@@ -141,9 +135,11 @@ class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps, IosS
       });
     }
 
-    isFunction(onChange) && onChange(newKnobOnLeft);
+    onChange && onChange(newKnobOnLeft);
   };
 }
+
+const isEmpty = (str?: string): boolean => (str !== undefined && str.length > 0) === false;
 
 interface IosSwitchMaterialUiState {
   knobOnLeft: boolean;

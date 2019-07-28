@@ -110,3 +110,7 @@ export default App;
 ### 3.0.1
 
 - Updated typescript definition of the component
+
+### 3.0.2
+
+- Removed usage of lodash
