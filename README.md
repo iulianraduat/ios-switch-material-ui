@@ -114,3 +114,7 @@ export default App;
 ### 3.0.2
 
 - Removed usage of lodash
+
+### 3.0.3
+
+- Fixed bug related to not changing the position of the knob in controlled mode

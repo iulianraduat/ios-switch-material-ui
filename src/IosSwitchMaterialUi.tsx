@@ -90,7 +90,7 @@ class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps, IosS
   }
 
   private getStyleForKnob(): React.CSSProperties {
-    const { knobOnLeft } = this.state;
+    const knobOnLeft = this.isKnobOnLeft();
 
     const backgroundColor: string = this.getKnobColor(knobOnLeft);
     const knobSize = this.getKnobSize();
@@ -127,7 +127,7 @@ class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps, IosS
       return;
     }
 
-    const newKnobOnLeft: boolean = !this.state.knobOnLeft;
+    const newKnobOnLeft: boolean = !this.isKnobOnLeft();
 
     if (this.props.knobOnLeft === undefined) {
       this.setState({
@@ -137,6 +137,9 @@ class IosSwitchMaterialUi extends React.Component<IosSwitchMaterialUiProps, IosS
 
     onChange && onChange(newKnobOnLeft);
   };
+
+  private isKnobOnLeft = (): boolean =>
+    this.props.knobOnLeft !== undefined ? this.props.knobOnLeft : this.state.knobOnLeft;
 }
 
 const isEmpty = (str?: string): boolean => (str !== undefined && str.length > 0) === false;
