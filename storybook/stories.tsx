@@ -27,6 +27,7 @@ storiesOf('IosSwitchMaterialUi', module)
   .add('controlled', () => (
     <div>
       <IosSwitchMaterialUi knobOnLeft={true} onChange={showSelectedValue('controlled')} />
+      <IosSwitchMaterialUi knobOnLeft={false} onChange={showSelectedValue('controlled')} />
       <div style={style} />
       Selected value: <span id="controlled" />
     </div>
