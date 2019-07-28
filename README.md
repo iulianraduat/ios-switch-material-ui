@@ -106,3 +106,7 @@ export default App;
 - Made the component to be controlled and uncontrolled
 - Added a stroybook
 - Updated packages
+
+### 3.0.1
+
+- Updated typescript definition of the component
