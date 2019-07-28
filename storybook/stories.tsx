@@ -31,6 +31,13 @@ storiesOf('IosSwitchMaterialUi', module)
       Selected value: <span id="controlled" />
     </div>
   ))
+  .add('disabled', () => (
+    <div>
+      <IosSwitchMaterialUi disabled={true} onChange={showSelectedValue('disabled')} />
+      <div style={style} />
+      Selected value: <span id="disabled" />
+    </div>
+  ))
   .add('with custom colors', () => (
     <div>
       <IosSwitchMaterialUi
