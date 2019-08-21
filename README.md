@@ -38,6 +38,7 @@ The component accepts the props defined bellow in the table.
 |                      2.0.x |    4.0.2    | 16.8.6 |
 |                      2.1.x |    4.2.0    | 16.8.6 |
 |                      3.0.x |    4.2.1    | 16.8.6 |
+|                      3.1.x |    4.3.2    | 16.9.0 |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -118,3 +119,7 @@ export default App;
 ### 3.0.3
 
 - Fixed bug related to not changing the position of the knob in controlled mode
+
+### 3.1.0
+
+- Updated packages
