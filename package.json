@@ -1,6 +1,6 @@
 {
   "name": "ios-switch-material-ui",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "A material-ui component which implements a iOS like switch",
   "main": "lib/index.js",
   "sideEffects": false,
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iulian-radu-at/labeled-checkbox-material-ui.git"
+    "url": "git+https://github.com/iulian-radu-at/ios-switch-material-ui.git"
   },
   "files": [
     "lib",
@@ -24,7 +24,7 @@
     "labeled-checkbox",
     "password",
     "material-ui",
-    "labeled-checkbox-material-ui",
+    "ios-switch-material-ui",
     "react",
     "react-component",
     "ui",
@@ -33,37 +33,37 @@
   "author": "Iulian Radu <iulian.radu@gmx.at>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iulian-radu-at/labeled-checkbox-material-ui/issues"
+    "url": "https://github.com/iulian-radu-at/ios-switch-material-ui/issues"
   },
-  "homepage": "https://github.com/iulian-radu-at/labeled-checkbox-material-ui#readme",
+  "homepage": "https://github.com/iulian-radu-at/ios-switch-material-ui#readme",
   "dependencies": {
-    "@material-ui/core": "^4.3.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "@material-ui/core": "^4.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@storybook/react": "^5.1.11",
+    "@babel/core": "^7.8.3",
+    "@storybook/react": "^5.3.9",
     "@types/babel-core": "^6.25.6",
-    "@types/enzyme": "^3.10.3",
+    "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-transition-group": "^4.2.2",
-    "@types/rimraf": "^2.0.2",
-    "@types/storybook__react": "^4.0.2",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-transition-group": "^4.2.3",
+    "@types/rimraf": "^2.0.3",
     "babel-core": "^6.26.3",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
-    "cross-env": "^5.2.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
+    "babel-preset-react-app": "^9.1.0",
+    "cross-env": "^7.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "rimraf": "^3.0.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "jest": {
     "modulePathIgnorePatterns": [
