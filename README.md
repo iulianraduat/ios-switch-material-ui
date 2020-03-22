@@ -1,4 +1,4 @@
-# ios-switch-material-ui
+# ios-switch-material-ui ![Weekly downloads](https://img.shields.io/npm/dw/ios-switch-material-ui "Weekly downloads")
 
 A material-ui component which implements a iOS like switch
 
@@ -15,7 +15,7 @@ The component accepts the props defined bellow in the table.
 ### Props accepted by IosSwitchMaterialUi
 
 | Name              | Type                          | Required | Default   | Description                                                     |
-|-------------------|-------------------------------|----------|-----------|-----------------------------------------------------------------|
+| ----------------- | ----------------------------- | -------- | --------- | --------------------------------------------------------------- |
 | aspectRatio       | number                        | no       | 2         | The width/height raport                                         |
 | colorKnobOnLeft   | string                        | no       | #eeeeee   | The color of the knob when it is on the left                    |
 | colorKnobOnRight  | string                        | no       | #5269d8   | The color of the knob when it is on the right                   |
@@ -31,7 +31,7 @@ The component accepts the props defined bellow in the table.
 ## Versions
 
 | IosSwitchMaterialUi _uses_ | Material-ui | React  |
-|---------------------------:|:-----------:|:------:|
+| -------------------------: | :---------: | :----: |
 |                      1.0.x |    3.6.0    | 16.6.3 |
 |                      1.1.x |    3.9.2    | 16.8.1 |
 |                      1.2.x |    3.9.3    | 16.8.6 |
@@ -40,6 +40,7 @@ The component accepts the props defined bellow in the table.
 |                      3.0.x |    4.2.1    | 16.8.6 |
 |                      3.1.x |    4.3.2    | 16.9.0 |
 |                      3.2.x |    4.9.0    | 16.9.0 |
+|                      3.3.x |    4.9.7    | 16.9.0 |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -62,9 +63,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <IosSwitchMaterialUi
-					colorKnobOnLeft="red"
-					colorKnobOnRight="blue"
-					colorSwitch="aqua"
+          colorKnobOnLeft="red"
+          colorKnobOnRight="blue"
+          colorSwitch="aqua"
           onChange={this.handleChange}
         />
       </div>
@@ -128,3 +129,8 @@ export default App;
 ### 3.2.0
 
 - Updated packages
+
+### 3.3.0
+
+- Updated packages
+- Moved from npm to yarn
