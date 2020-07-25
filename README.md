@@ -42,6 +42,7 @@ The component accepts the props defined bellow in the table.
 |                      3.2.x |    4.9.0    | 16.9.0 |
 |                      3.3.x |    4.9.7    | 16.9.0 |
 |                      3.4.x |   4.10.2    | 16.9.0 |
+|                      3.5.x |   4.11.0    | 16.9.0 |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -137,5 +138,9 @@ export default App;
 - Moved from npm to yarn
 
 ### 3.4.0
+
+- Updated packages
+
+### 3.5.0
 
 - Updated packages
