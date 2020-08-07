@@ -1,1 +1,1 @@
-export * from './IosSwitchMaterialUi';
+export { default } from "./IosSwitchMaterialUi";
