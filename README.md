@@ -44,6 +44,7 @@ The component accepts the props defined bellow in the table.
 |                      3.4.x |   4.10.2    |      16.9.0      |
 |                      3.5.x |   4.11.0    |      16.9.0      |
 |                      3.6.x |   4.11.3    | 16.9.0 or 17.0.0 |
+|                      3.7.x |   4.12.3    | 16.9.0 or 17.0.0 |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -154,3 +155,7 @@ export default App;
 
 - Accepting React 17 as peerDependencies
 - Fixed security warnings
+
+### 3.7.0
+
+- Updated the packages
