@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface IosSwitchMaterialUiProps extends React.Props<IosSwitchMaterialUi> {
+export interface IosSwitchMaterialUiProps {
   aspectRatio?: number;
   colorKnobOnLeft?: string;
   colorKnobOnRight?: string;
