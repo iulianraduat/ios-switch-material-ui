@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import IosSwitchMaterialUi from '../src/IosSwitchMaterialUi';
 
@@ -11,14 +11,14 @@ const showSelectedValue = (id: string) => (knobOnLeft: boolean) =>
     ? 'knobOnLeft'
     : 'knobOnRight');
 
-export default {
+const meta: Meta<typeof IosSwitchMaterialUi> = {
   title: 'IosSwitchMaterialUi',
   component: IosSwitchMaterialUi,
-} as ComponentMeta<typeof IosSwitchMaterialUi>;
+} as Meta<typeof IosSwitchMaterialUi>;
+export default meta;
+type Story = StoryObj<typeof IosSwitchMaterialUi>;
 
-export const UncontrolledWithoutKnobPositionSet: ComponentStory<
-  typeof IosSwitchMaterialUi
-> = () => (
+export const UncontrolledWithoutKnobPositionSet = () => (
   <div>
     <IosSwitchMaterialUi onChange={showSelectedValue('uncontrolled')} />
     <div style={style} />
@@ -26,9 +26,7 @@ export const UncontrolledWithoutKnobPositionSet: ComponentStory<
   </div>
 );
 
-export const UncontrolledWithKnobPositionSet: ComponentStory<
-  typeof IosSwitchMaterialUi
-> = () => (
+export const UncontrolledWithKnobPositionSet = () => (
   <div>
     <IosSwitchMaterialUi
       defaultKnobOnLeft={true}
@@ -39,7 +37,7 @@ export const UncontrolledWithKnobPositionSet: ComponentStory<
   </div>
 );
 
-export const Controlled: ComponentStory<typeof IosSwitchMaterialUi> = () => (
+export const Controlled = () => (
   <div>
     <IosSwitchMaterialUi
       knobOnLeft={true}
@@ -54,7 +52,7 @@ export const Controlled: ComponentStory<typeof IosSwitchMaterialUi> = () => (
   </div>
 );
 
-export const Disabled: ComponentStory<typeof IosSwitchMaterialUi> = () => (
+export const Disabled = () => (
   <div>
     <IosSwitchMaterialUi
       disabled={true}
@@ -65,40 +63,37 @@ export const Disabled: ComponentStory<typeof IosSwitchMaterialUi> = () => (
   </div>
 );
 
-export const WithCustomColors: ComponentStory<typeof IosSwitchMaterialUi> =
-  () => (
-    <div>
-      <IosSwitchMaterialUi
-        colorKnobOnLeft="red"
-        colorKnobOnRight="blue"
-        colorSwitch="aqua"
-        onChange={showSelectedValue('colors')}
-      />
-      <div style={style} />
-      Selected value: <span id="colors" />
-    </div>
-  );
+export const WithCustomColors = () => (
+  <div>
+    <IosSwitchMaterialUi
+      colorKnobOnLeft="red"
+      colorKnobOnRight="blue"
+      colorSwitch="aqua"
+      onChange={showSelectedValue('colors')}
+    />
+    <div style={style} />
+    Selected value: <span id="colors" />
+  </div>
+);
 
-export const WithCustomAspectRatio: ComponentStory<typeof IosSwitchMaterialUi> =
-  () => (
-    <div>
-      <IosSwitchMaterialUi
-        aspectRatio={5}
-        onChange={showSelectedValue('aspect-ratio')}
-      />
-      <div style={style} />
-      Selected value: <span id="aspect-ratio" />
-    </div>
-  );
+export const WithCustomAspectRatio = () => (
+  <div>
+    <IosSwitchMaterialUi
+      aspectRatio={5}
+      onChange={showSelectedValue('aspect-ratio')}
+    />
+    <div style={style} />
+    Selected value: <span id="aspect-ratio" />
+  </div>
+);
 
-export const WithCustomKnobSize: ComponentStory<typeof IosSwitchMaterialUi> =
-  () => (
-    <div>
-      <IosSwitchMaterialUi
-        knobSize={40}
-        onChange={showSelectedValue('knob-size')}
-      />
-      <div style={style} />
-      Selected value: <span id="knob-size" />
-    </div>
-  );
+export const WithCustomKnobSize = () => (
+  <div>
+    <IosSwitchMaterialUi
+      knobSize={40}
+      onChange={showSelectedValue('knob-size')}
+    />
+    <div style={style} />
+    Selected value: <span id="knob-size" />
+  </div>
+);

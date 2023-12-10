@@ -46,6 +46,7 @@ The component accepts the props defined bellow in the table.
 |                      3.6.x |   4.11.3    | 16.9.0 or 17.0.0 |
 |                      3.7.x |   4.12.3    | 16.9.0 or 17.0.0 |
 |                      4.0.x |   5.10.17   |      18.0.0      |
+|                      4.1.x |   5.14.20   |      18.0.0      |
 
 ### About versioning schema used for IosSwitchMaterialUi
 
@@ -164,3 +165,7 @@ export default App;
 ### 4.0.0
 
 - Supports minimum React 18
+
+### 4.1.0
+
+- Updated the packages
